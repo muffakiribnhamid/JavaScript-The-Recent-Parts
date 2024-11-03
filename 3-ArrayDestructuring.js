@@ -21,8 +21,29 @@ let third = tmp[2]
 //destructuring method
 
 function data2() {
-    return [1,2,3]
+    return [1,2,3] 
 }
 let [first1,second2,third2,fourth = 10] = data();
 
 console.log(fourth);
+
+//nested arrays destructuring
+
+
+function data2() {
+    return [1,[2,3],4]
+}
+
+let temp;
+
+temp =  [
+    first,
+    [
+        second,
+        third
+    ],
+    fourth
+
+] = data2() || [];
+
+console.log(first);
