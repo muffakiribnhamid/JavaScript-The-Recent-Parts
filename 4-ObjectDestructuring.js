@@ -37,3 +37,22 @@ let {
 } = nestedData()
 
 console.log(third);
+
+
+//further destructuring
+
+
+
+function student({
+    name = "Coder",
+    rollNo = 20
+
+
+}) {
+    // code here
+    return rollNo
+}
+
+
+
+console.log(student({rollNo:211}));
