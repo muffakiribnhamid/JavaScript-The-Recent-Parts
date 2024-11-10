@@ -88,3 +88,58 @@ for(const [key,value] of objectIterator) {
     
 
 }
+//generators in js are special functions that allow you to control the flow of execution and produce multiple values over time
+//generators are defined using the function* syntax and can yield values at a time, allowing you to pause and resume execution
+
+
+//declaring a generator function
+
+function* myGen() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+
+//In this example, myGenerator is a generator function. Unlike regular functions,
+//when you call a generator function, it doesn’t run the code inside immediately. 
+// Instead, it returns an iterator called a generator object, which you can use to control execution.
+
+const gen = myGen()
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+
+
+
+//Passing Arguments to yield
+
+function* counter() {
+    let count = 0;
+    while(true) {
+        count += yield count;
+    }
+}
+
+
+
+const countGen = counter()
+console.log(countGen.next().value);
+console.log(countGen.next(5).value);
+console.log(countGen.next(10).value);
+
+
+
+
+/*
+Summary Table
+Feature	                Iterator	                Generator
+Definition	            Object with next() method	Function with function* syntax
+Creation	            Manually	                Using function* and yield
+Syntax	                Requires custom next()	    Uses yield to handle iteration
+State Management	    Manual	                    Automatic with yield
+Lazy Evaluation	        Possible but manual	        Built-in
+Two-Way Communication	Not by default	            Supports via next(value)
+Return Value	        Not standard	            return can provide final value
+*/
