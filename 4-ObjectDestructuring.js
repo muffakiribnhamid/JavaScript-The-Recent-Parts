@@ -55,4 +55,11 @@ function student({
 
 
 
-console.log(student({rollNo:211}));
+student(
+    {
+        rollNo:211
+    }
+);
+
+// we can use named arguments if we skip the position of parameters
+

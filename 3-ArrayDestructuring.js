@@ -41,9 +41,20 @@ temp =  [
     [
         second,
         third
-    ],
+    ] = [],
     fourth
 
 ] = data2() || [];
 
 console.log(first);
+
+
+/*
+function data2() {
+    return 
+
+    //what if i will return nothing
+    it will simply through a type error
+}
+
+*/
